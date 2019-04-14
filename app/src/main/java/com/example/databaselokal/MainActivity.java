@@ -21,16 +21,15 @@ import com.example.databaselokal.view.MainData;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MainContract.view {
-    private DataSekolah dataSekolah;
     private AppDatabase appDatabase;
     private MainData data;
     private MainAdapter adapter;
 
-    private Button btnInput, btnEdit, btnDelete, btnReset;
+    private Button btnInput, btnEdit, btnReset;
     private TextView tvNama, tvSiswa, tvGuru, tvAlamat;
     private RecyclerView rvData;
 
-    private int id = 0;
+    private int id = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.view
 
         btnInput = findViewById(R.id.btn_input);
         btnEdit = findViewById(R.id.btn_edit);
-        btnDelete = findViewById(R.id.btn_delete);
         btnReset = findViewById(R.id.btn_reset);
         tvNama = findViewById(R.id.et_nama);
         tvSiswa = findViewById(R.id.et_siswa);
@@ -81,14 +79,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.view
                             tvGuru.getText().toString(), tvAlamat.getText().toString(), id, appDatabase);
                     successAdd();
                 }
-            }
-        });
-
-        btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                data.deleteData(dataSekolah, appDatabase);
-                successDelete();
             }
         });
 
@@ -150,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.view
                     public void onClick(DialogInterface dialog, int which) {
                         resetForm();
                         data.deleteData(item, appDatabase);
+                        successDelete();
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {

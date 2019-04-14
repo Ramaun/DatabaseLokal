@@ -23,7 +23,5 @@ public interface DataSekolahDAO {
     @Delete
     void deleteData(DataSekolah item);
 
-
-
 }
 

@@ -8,6 +8,7 @@
     android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="150dp"
@@ -86,19 +87,13 @@
         android:text="Edit"
         android:layout_toRightOf="@id/btn_input"
         android:layout_below="@id/rv_database"/>
-    <Button
-        android:id="@+id/btn_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete"
-        android:layout_toRightOf="@id/btn_edit"
-        android:layout_below="@id/rv_database"/>
+
     <Button
         android:id="@+id/btn_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reset"
-        android:layout_toRightOf="@id/btn_delete"
+        android:layout_toRightOf="@id/btn_edit"
         android:layout_below="@id/rv_database"/>
 
 </RelativeLayout>
