@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Nama Sekolah"
+        android:textSize="20dp"
+        android:layout_toLeftOf="@id/tv_name"/>
+    <EditText
+        android:id="@+id/et_nama"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/tv_name"/>
+
+    <TextView
+        android:id="@+id/tv_siswa"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Jumlah Siswa"
+        android:textSize="20dp"
+        android:layout_below="@id/et_nama"/>
+    <EditText
+        android:id="@+id/et_siswa"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/tv_siswa"
+        android:layout_below="@id/tv_name"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/tv_guru"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Jumlah Guru"
+        android:textSize="20dp"
+        android:layout_below="@id/et_siswa"/>
+    <EditText
+        android:id="@+id/et_guru"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/tv_guru"
+        android:layout_below="@id/tv_siswa"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/tv_alamat"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Alamat Sekolah"
+        android:textSize="20dp"
+        android:layout_below="@id/et_guru"/>
+    <EditText
+        android:id="@+id/et_alamat"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/tv_alamat"
+        android:layout_below="@id/tv_guru"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_database"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/et_alamat">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/btn_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input"
+        android:layout_below="@id/rv_database"/>
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:layout_toRightOf="@id/btn_input"
+        android:layout_below="@id/rv_database"/>
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:layout_toRightOf="@id/btn_edit"
+        android:layout_below="@id/rv_database"/>
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:layout_toRightOf="@id/btn_delete"
+        android:layout_below="@id/rv_database"/>
+
+</RelativeLayout>
